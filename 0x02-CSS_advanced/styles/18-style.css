@@ -156,7 +156,7 @@ template {
     --text-color: var(--color-black);
 
     --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-family-title: Raleway, Helvetica, Arial, sans-serif;
+    --font-family-title: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     --nav-item-font-family: var(--font-family-title);
 
@@ -198,7 +198,9 @@ template {
     --nav-item-link-hover: var(--color-primary);
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
