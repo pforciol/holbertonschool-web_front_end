@@ -7,3 +7,4 @@
 -   [x] [0x04. Flexbox](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x04-flexbox)
 -   [x] [0x05. Forms](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x05-form)
 -   [ ] [0x06. Responsive design](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x06-responsive_design)
+-   [ ] [0x07. Accessibility](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x07-accessibility)
