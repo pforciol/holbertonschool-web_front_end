@@ -8,4 +8,7 @@
 -   [x] [0x05. Forms](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x05-form)
 -   [x] [0x06. Responsive design](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x06-responsive_design)
 -   [x] [0x07. Accessibility](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x07-accessibility)
--   [ ] [0x0A. Bootstrap](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x0A-Bootstrap)
+-   [x] [0x0A. Bootstrap](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x0A-Bootstrap)
+-   [x] [0x0C. Javascript advanced](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x0C-Javascript_advanced)
+-   [x] [0x0D. JQuery advanced](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x0D-JQuery_advanced)
+-   [ ] [0x0E. Cookies & local storage](https://github.com/pforciol/holbertonschool-web_front_end/tree/master/0x0E-Cookies_local_storage)

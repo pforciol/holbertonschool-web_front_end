@@ -1,4 +1,6 @@
 **sass-cache**
+**node_modules**
+**.vscode**
 
 0x02-CSS_advanced/index.html
 
@@ -7,4 +9,6 @@
 0x03-sass_scss/103-sort_list.scss
 
 0x04-flexbox/101-index.html
+
 0x0A-Bootstrap/6-index.html
+0x0E-Cookies_local_storage/package-lock.json
