@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 7</title>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            function createSearchForm() {
+                $("body").append(`<input type="text">`);
+                $("body").append(`<input type="submit">`);
+                $("body").append("<ul>");
+
+                $(":submit").click(function (e) {
+                    queryWikipedia($("input").first().val());
+                });
+            }
+
+            function addNewArticle(id, title, snippet) {
+                const article = `
+                <li>
+                    <p>
+                        <span>${id} - <b>${title}</b></span>
+                    </p>
+                    <p>
+                        ${snippet}
+                    </p>
+                </li>`;
+                $("ul").append(article);
+            }
+
+            function queryWikipedia(search) {
+                const url = "https://en.wikipedia.org/w/api.php?origin=*";
+                const params = {
+                    action: "query",
+                    list: "search",
+                    srsearch: search,
+                    format: "json",
+                };
+
+                const list = $.ajax({
+                    type: "GET",
+                    url: url,
+                    data: params,
+                });
+
+                list.done(function () {
+                    const results = list.responseJSON.query.search;
+                    for (result of results) {
+                        addNewArticle(result.pageid, result.title, result.snippet);
+                    }
+                });
+            }
+
+            createSearchForm();
+        </script>
+    </body>
+</html>

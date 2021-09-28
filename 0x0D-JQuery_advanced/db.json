@@ -1,0 +1,74 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        },
+        {
+            "title": "fd",
+            "author": "fffff",
+            "id": 2
+        },
+        {
+            "title": "fd",
+            "author": "fffff",
+            "id": 3
+        },
+        {
+            "title": "f",
+            "author": "F",
+            "id": 4
+        },
+        {
+            "title": "azer",
+            "author": "AZER",
+            "id": 5
+        },
+        {
+            "title": "qsdf",
+            "author": "QSDF",
+            "id": 6
+        },
+        {
+            "title": "wxcv",
+            "author": "WXCV",
+            "id": 7
+        },
+        {
+            "title": "uiop",
+            "author": "UIOP",
+            "id": 8
+        },
+        {
+            "title": "jklm",
+            "author": "JKLM",
+            "id": 9
+        },
+        {
+            "title": "dfgh",
+            "author": "DFGH",
+            "id": 10
+        },
+        {
+            "title": "jean michel",
+            "author": "jquery",
+            "id": 11
+        },
+        {
+            "title": "Jacques Chirac",
+            "author": "Mangez des pommes",
+            "id": 12
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}

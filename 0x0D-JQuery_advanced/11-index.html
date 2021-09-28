@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+        <title>Task 11</title>
+        <style></style>
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            function addPostRow(data) {
+                $("body").append("<p></p>");
+                $("p").last().append("<span></span>");
+                $("p span")
+                    .last()
+                    .text(
+                        `Post created with id ${data.id}, title: ${data.title}, author: ${data.author}`
+                    );
+            }
+
+            function listPosts() {
+                const url = "http://127.0.0.1:3000/posts";
+                $.get(url)
+                    .done((response) => {
+                        for (post of response) {
+                            addPostRow(post);
+                        }
+                    })
+                    .fail((_) => window.alert("Server Error"));
+            }
+
+            function buildForm() {
+                $("body").append("<form></form>");
+                $("form").append(
+                    '<div><label for="author">Author</label><input type="text" id="author" /></div>'
+                );
+                $("form").append(
+                    '<div><label for="title">Title</label><textarea id="title"></textarea>'
+                );
+                $("form").append('<input type="submit" />');
+                $(":submit").click((_) => sendForm());
+            }
+
+            function sendForm() {
+                $("form").after("About to send the query to the API");
+                const url = "http://127.0.0.1:3000/posts";
+                const data = { title: $("input").val(), author: $("textarea").val() };
+                $.post(url, data)
+                    .done((response) => {
+                        console.log(response);
+                    })
+                    .fail((_) => window.alert("Error sending the POST query"));
+            }
+
+            $(document).ready(buildForm());
+            $(document).ready(listPosts());
+        </script>
+    </body>
+</html>

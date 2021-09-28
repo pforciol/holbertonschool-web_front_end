@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 6</title>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            function createFamilyTree() {
+                $("body").append("<table>");
+                $("table").append("<thead>", "<tbody>");
+                $("thead").html(`
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                </tr>`);
+            }
+
+            function addNewMember(firstName, lastName, position) {
+                if (position == "before") {
+                    $("tbody").prepend(
+                        `<tr><td>${firstName}</td><td>${lastName}</td><td>(x)</td></tr>`
+                    );
+                } else {
+                    $("tbody").append(
+                        `<tr><td>${firstName}</td><td>${lastName}</td><td>(x)</td></tr>`
+                    );
+                }
+                $("tbody tr td:last-child").css("background-color", "orange");
+                $("tbody tr td:last-child").click(function () {
+                    $(this).parent("tr").remove();
+                });
+            }
+
+            function createForm() {
+                $("table").before("<form>");
+                $("form").append(`<input type="text">`, `<input type="text">`);
+                $("form").append(
+                    `<select><option id="before">Before</option><option id="after">After</option>`
+                );
+                $("form").append(`<input type="submit">`);
+                $("form").submit(function (e) {
+                    addNewMember(
+                        $("input").first().val(),
+                        $("input:nth-of-type(2)").val(),
+                        $("select").children(":selected").attr("id")
+                    );
+                    e.preventDefault();
+                });
+            }
+
+            createFamilyTree();
+            createForm();
+        </script>
+    </body>
+</html>
