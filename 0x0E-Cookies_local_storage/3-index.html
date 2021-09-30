@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Task 3</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <div id="form">
+            <h2>Login to the website</h2>
+            <input type="text" id="firstname" placeholder="Firstname" />
+            <input type="text" id="email" placeholder="Email" />
+            <button onclick="setCookies()">Log me in</button>
+        </div>
+
+        <script type="application/javascript">
+            function setCookies() {
+                const firstname = document.getElementById("firstname").value;
+                const email = document.getElementById("email").value;
+
+                const expires = new Date(new Date().getTime() + 10 * 24 * 60 * 60 * 1000);
+
+                document.cookie = "firstname=" + firstname + "; expires=" + expires.toUTCString();
+                document.cookie = "email=" + email + "; expires=" + expires.toUTCString();
+
+                location.reload();
+            }
+
+            function getCookie(name) {
+                const string = name + "=";
+                const cookies = document.cookie.split(";");
+
+                for (cookie of cookies) {
+                    cookie = cookie.trim();
+                    if (cookie.startsWith(string)) return cookie.split("=")[1];
+                }
+            }
+
+            function showForm() {
+                const message = document.getElementById("message");
+                if (message) message.remove();
+
+                document.getElementById("form").style.display = "block";
+            }
+
+            function hideForm() {
+                document.getElementById("form").style.display = "none";
+            }
+
+            function deleteCookiesAndShowForm() {
+                document.cookie = "firstname=; expires=" + new Date(-1).toUTCString();
+                document.cookie = "email=; expires=" + new Date(-1).toUTCString();
+
+                showForm();
+            }
+
+            function showWelcomeMessageOrForm() {
+                if (getCookie("firstname") && getCookie("email")) {
+                    const text = document.createElement("h1");
+                    const link = document.createElement("a");
+
+                    text.textContent = "Welcome " + getCookie("firstname");
+                    text.setAttribute("id", "message");
+
+                    link.textContent = "(logout)";
+                    link.style.fontWeight = "normal";
+                    link.style.fontStyle = "italic";
+                    link.style.marginLeft = "10px";
+                    link.addEventListener("click", deleteCookiesAndShowForm);
+
+                    text.append(link);
+                    document.body.append(text);
+                } else {
+                    showForm();
+                }
+            }
+
+            showWelcomeMessageOrForm();
+        </script>
+    </body>
+</html>

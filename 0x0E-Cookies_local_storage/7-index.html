@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Task 7</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <script type="application/javascript">
+            const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+
+            if (Storage !== undefined) {
+                createStore();
+                displayCart();
+            } else {
+                alert("Sorry, your browser does not support Web storage. Try again with a better one");
+            }
+
+            function getCartFromStorage() {
+                const storage = sessionStorage;
+            }
+        </script>
+    </body>
+</html>
